@@ -99,6 +99,10 @@ default['openvpn']['config']['cert']            = "#{node['openvpn']['key_dir']}
 default['openvpn']['config']['dh']              = "#{node['openvpn']['key_dir']}/dh#{node['openvpn']['key']['size']}.pem"
 default['openvpn']['config']['crl-verify']      = [node['openvpn']['fs_prefix'], '/etc/openvpn/crl.pem'].join
 
+# Other useful server settings
+default['openvpn']['config']['duplicate-cn']    = nil
+default['openvpn']['config']['status']          = nil
+
 # interface configuration depending on type
 case node['openvpn']['type']
 when 'client'
